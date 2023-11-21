@@ -16,7 +16,7 @@ div.grid-wrapper {
     flex-wrap: wrap;
 }
 
-div.square {
+.square {
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid black;

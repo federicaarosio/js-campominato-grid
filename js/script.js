@@ -15,14 +15,22 @@
 
 //toggle per dare e rimuovere il colore alla cella ed emettere msg console con numero cella
 
-const wrapperElement = document.querySelector("div.grid-wrapper");
 
-for (let i = 0; i < 100; i++) {
-    wrapperElement.appendChild(generateSquare());
+//parent
+const gridWrapperElement = document.querySelector("div.grid-wrapper");
+
+for (let i = 1 ; i <= 100 ; i++){
+    const currentSquare = generateSquare();
+    const squareContent = i;
+    currentSquare.innerHTML += `<span> ${squareContent} </span>`;
+    gridWrapperElement.appendChild(currentSquare);
 }
 
+
+
+// Funzioni
 function generateSquare() {
-    const divElement = document.createElement("div");
-    divElement.classList.add("square");
-    return divElement;
+    const generateSquareElement = document.createElement("article");
+    generateSquareElement.classList.add("square");
+    return generateSquareElement;
 }
