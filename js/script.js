@@ -14,16 +14,26 @@
 
 //toggle per dare e rimuovere il colore alla cella ed emettere msg console con numero cella
 
+
+
+//Seleziono il bottone
 const playBtnElement = document.querySelector("button.play");
 console.log(playBtnElement);
-playBtnElement.addEventListener("click", function() {
 
+//Click sul bottone genera nuova griglia
+playBtnElement.addEventListener("click", function() {
+    
+    gridWrapperElement.innerHTML = "";
+
+    
     for (let i = 1 ; i <= 100 ; i++){
+        //genero cella
         const currentSquare = generateSquare();
+        //popolo cella con numeri
         const squareContent = i;
         currentSquare.innerHTML += `<span> ${squareContent} </span>`;
         gridWrapperElement.appendChild(currentSquare);
-    
+        
         currentSquare.addEventListener("click", function(){
             this.classList.toggle('bg-light-blue');
             console.log(squareContent);
@@ -31,11 +41,8 @@ playBtnElement.addEventListener("click", function() {
     }
 });
 
-
-
-
-
 const gridWrapperElement = document.querySelector("div.grid-wrapper");
+
 
 
 
